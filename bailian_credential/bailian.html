@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="./bailian.css">
+  <title>Document</title>
+  <script src="https://cdn.jsdelivr.net/npm/vue"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js"></script>
+</head>
+<body>
+  <div id="bailian">
+    <div class="container" v-if="credentialData">
+      <img src="./img/background.png" alt="" style="width: 1000px;height: 707px;">
+      <div class="ceri-title" style="
+          left: 400px;
+      ">获 奖 证 书</div>
+      <div class="ceri-into" style="
+    left: 100px;
+">将此证书颁发给</div>
+      <div class="ceri-into-eng" style="
+    left: 100px;
+">THIS IS PRESENTED TO</div>
+      <div class="ceri-name" style="
+    left: 300px;
+">{{claim.receiver_name}}</div>
+      <div class="slogan" style="
+    left: 200px;
+">Slogan:</div>
+      <div class="weid">weid:</div>
+      <div class="slogan-text" style="
+    left: 280px;
+">{{claim.receiver_slogan}}</div>
+      <div class="weid-text">{{claim.receiver_weid}}</div>
+      <span class="info-text" style="
+    left: 200px;
+">在参加柏链第一届区块链开发大赛中，</span>
+      <strong><span class="price" style="left: 550px;">获得{{credentialData.claim.price}}</span></strong>
+      <div class="guli" style="
+    left: 400px;
+">特发此证，以资鼓励</div>
+      <div class="signature" style="
+    top: 510px;
+">Signature</div>
+      <div class="creator" style="
+    left: 630px;
+    top: 510px;
+">Creator</div>
+      <div class="signature-text" style="
+    top: 550px;
+">{{credentialData.proof.signature}}</div>
+      <div class="creator-text"style="
+    top: 550px;
+    left: 580px;
+">{{credentialData.proof.creator}}</div>
+      <div class="type" style="
+    left: 50px;
+    top: 660px;
+">Type: {{credentialData.proof.type}}</div>
+      <div class="time" style="
+    left: 680px;
+    top: 670px;
+">{{transformTime('YYYY-mm-dd HH:MM', credentialData.issuanceDate)}} -
+        {{transformTime('YYYY-mm-dd HH:MM', credentialData.expirationDate)}}</div>
+      </div>
+    </div>
+  <script src="./bailian.js"></script>
+</body>
+</html>
